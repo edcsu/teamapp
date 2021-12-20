@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'teamapp';
+  competitor = '';
+  competitors: string[] = [];
+
+  addCompetitor(){
+    this.competitors.push(this.competitor);
+  }
+
+  onCompetitorInput(newCompetitor: string){
+    this.competitor = newCompetitor;
+    console.log(this.competitor);
+  }
 }

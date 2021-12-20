@@ -3,16 +3,18 @@
   <mat-card-subtitle>Generate matchups in a second</mat-card-subtitle>
   <mat-card-content>
     <mat-list role="list">
-      <mat-list-item role="listitem">Item 1</mat-list-item>
-      <mat-list-item role="listitem">Item 2</mat-list-item>
-      <mat-list-item role="listitem">Item 3</mat-list-item>
+      <mat-list-item role="listitem" *ngFor="let item of competitors">{{competitor}}</mat-list-item>
     </mat-list>
     <form class="example-name-form">
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Competitor's name</mat-label>
-        <input matInput placeholder="John Doe">
+        <input 
+          #competitorInput 
+          matInput 
+          placeholder="John Doe" 
+          (input)="onCompetitorInput(competitorInput.value)">
       </mat-form-field>
-      <button class="form-button" type="button" mat-raised-button color="primary">Add</button>
+      <button (click)="addCompetitor()" class="form-button" type="button" mat-raised-button color="primary">Add</button>
     </form>
     <form class="example-number-form">
       <mat-form-field class="example-full-width" appearance="fill">
