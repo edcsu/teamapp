@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'teamapp';
+  isNameEmpty:boolean = false;
   competitor = '';
   competitors: string[] = [];
 
   addCompetitor(){
+    if (!this.competitor) {
+      this.isNameEmpty = true;
+      return;
+    }
     this.competitors.push(this.competitor);
+    this.competitor = '';
+    this.isNameEmpty = false;
   }
 
   onCompetitorInput(newCompetitor: string){
     this.competitor = newCompetitor;
-    console.log(this.competitor);
   }
+
+  inputFormControl = new FormControl('', [Validators.required, Validators.nullValidator]);
 }
