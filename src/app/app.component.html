@@ -2,14 +2,24 @@
   <mat-card-title>Team Generator</mat-card-title>
   <mat-card-subtitle>Generate matchups in a second</mat-card-subtitle>
   <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Item 1</mat-list-item>
+      <mat-list-item role="listitem">Item 2</mat-list-item>
+      <mat-list-item role="listitem">Item 3</mat-list-item>
+    </mat-list>
+    <form class="example-name-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Competitor's name</mat-label>
+        <input matInput placeholder="John Doe">
+      </mat-form-field>
+      <button class="form-button" type="button" mat-raised-button color="primary">Add</button>
+    </form>
+    <form class="example-number-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Number of teams</mat-label>
+        <input type="number" matInput placeholder="10">
+      </mat-form-field>
+      <button type="button" class="form-button" mat-raised-button>Generate</button>
+    </form>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
 </mat-card>
